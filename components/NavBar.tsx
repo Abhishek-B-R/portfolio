@@ -1,5 +1,6 @@
-import { BookOpenText, Code2Icon, FileText, Github, HomeIcon, Linkedin, Twitter, User2Icon } from "lucide-react";
+import { BookOpenText, Code2Icon, FileText, HomeIcon, PenTool, User2Icon } from "lucide-react";
 import Link from "next/link";
+import { ThemeToggle } from "./themeToggle";
 
 export default function NavBar() {
     const icons=[{
@@ -18,35 +19,37 @@ export default function NavBar() {
         url: "/resume",
         icon: <FileText />
     },{
-        url: "https://github.com/Abhishek-B-R",
-        icon: <Github />
-    },{
-        url: "https://linkedin.com/in/abhi-br",
-        icon: <Linkedin />
-    },{
-        url: "https://twitter.com/abhi__br",
-        icon: <Twitter />
-    }]
+        url:"/guestbook",
+        icon: <PenTool />
+    }
+    ]
+// {
+//     url: "https://github.com/Abhishek-B-R",
+//     icon: <Github />
+// },{
+//     url: "https://linkedin.com/in/abhi-br",
+//     icon: <Linkedin />
+// },{
+//     url: "https://twitter.com/abhi__br",
+//     icon: <Twitter />
+// }
 
     return (
-        <nav className="flex flex-col justify-center items-center bg-[#FDF6E3] p-4 h-screen max-w-40">
-            <div className="container mx-auto flex flex-col justify-between items-center">
-                <ul className="flex flex-col space-y-4">
-                    {icons.map(({ url, icon: Icon }, index) => (
-                        <li key={index}>
-                            {url.startsWith("http") ? (
-                                <Link href={url} target="_blank" className="text-[#586569] hover:text-gray-300 flex gap-2 mt-4">
-                                    {Icon}
+        <div className="flex flex-col justify-end items-end">
+            <nav className="flex flex-col justify-center items-center p-4 h-screen max-w-40 border-r-1">
+                <div className="container mx-auto flex flex-col justify-between items-center">
+                    <ul className="flex flex-col space-y-4">
+                        {icons.map(({ url, icon: Icon }, index) => (
+                            <li key={index}>
+                                <Link href={url} className="flex gap-2 mt-4">
+                                        {Icon}
                                 </Link>
-                            ):(
-                                <Link href={url} className="text-[#586569] hover:text-gray-300 flex gap-2 mt-4">
-                                    {Icon}
-                                </Link>
-                            )}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </nav>
+                            </li>
+                        ))}
+                        <ThemeToggle />
+                    </ul>
+                </div>
+            </nav>
+        </div>
     )
 };  

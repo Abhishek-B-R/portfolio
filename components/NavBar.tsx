@@ -47,7 +47,7 @@ export default function NavBar() {
               </Link>
             </li>
           ))}
-          <li className="mt-8">
+          <li>
             <ThemeToggle />
           </li>
         </ul>

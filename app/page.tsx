@@ -1,5 +1,6 @@
 "use client"
 
+import HeroSection from "@/components/Hero"
 import NavBar, { useNavbarWidth } from "@/components/NavBar"
 
 export default function Page() {
@@ -8,20 +9,20 @@ export default function Page() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      {/* Dynamic margin based on actual navbar width */}
       <main
-        className="pb-16 md:pb-0 p-8 transition-all duration-300"
+        className="pb-16 md:pb-0 transition-all duration-300"
         style={{
           marginLeft: navbarWidth > 0 ? `${navbarWidth}px` : "0px",
+          marginRight: navbarWidth > 0 ? `${navbarWidth}px` : "0px",
         }}
       >
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Welcome to My Portfolio</h1>
-          <p className="text-lg text-muted-foreground mb-4">
-            This is the main content area. The navigation width decreases smoothly as the window gets smaller.
-          </p>
-          <p className="text-sm text-muted-foreground">Current navbar width: {navbarWidth}px</p>
-        </div>
+        <HeroSection />
+        <section className="min-h-screen flex items-center justify-center bg-muted/10">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold mb-4">More Content Below</h2>
+            <p className="text-muted-foreground">This is where your other sections would go...</p>
+          </div>
+        </section>
       </main>
     </div>
   )

@@ -24,7 +24,6 @@ export default function NavBar() {
       setWindowWidth(width)
 
       if (width < 768) {
-        // Mobile: no sidebar
         setNavbarWidth(0)
       } else {
         // Desktop: calculate navbar width based on window width
@@ -38,7 +37,6 @@ export default function NavBar() {
         } else if (width <= minWindowWidth) {
           setNavbarWidth(minNavbarWidth)
         } else {
-          // Linear interpolation between min and max
           const ratio = (width - minWindowWidth) / (maxWindowWidth - minWindowWidth)
           const calculatedWidth = minNavbarWidth + (maxNavbarWidth - minNavbarWidth) * ratio
           setNavbarWidth(Math.round(calculatedWidth))
@@ -46,13 +44,9 @@ export default function NavBar() {
       }
     }
 
-    // Set initial value
     calculateNavbarWidth()
-
-    // Add event listener
     window.addEventListener("resize", calculateNavbarWidth)
 
-    // Cleanup
     return () => window.removeEventListener("resize", calculateNavbarWidth)
   }, [])
 
@@ -90,7 +84,7 @@ export default function NavBar() {
           <li key={index}>
             <Link
               href={url}
-              className="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors"
+              className="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors md:mr-5 lg:mr-10"
             >
               {icon}
             </Link>

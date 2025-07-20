@@ -6,35 +6,36 @@
 
 /* 🌞 Light Mode — Solarized Light */
 :root {
-  --background: #fdf6e3;
-  --foreground: #586e75;
-
-  --muted: #eee8d5;
-  --muted-foreground: #657b83;
+  --background: #f9fafb;         /* very light gray, not pure white */
+  --foreground: #1f2937;         /* near-black, strong text */
+  
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
 
   --card: #ffffff;
-  --card-foreground: #586e75;
+  --card-foreground: #1f2937;
 
   --popover: #ffffff;
-  --popover-foreground: #586e75;
+  --popover-foreground: #1f2937;
 
-  --primary: #268bd2;
+  --primary: #3b82f6;            /* blue-500 */
   --primary-foreground: #ffffff;
 
-  --secondary: #b58900;
+  --secondary: #6366f1;          /* indigo-500 */
   --secondary-foreground: #ffffff;
 
-  --accent: #2aa198;
+  --accent: #101b17;             /* emerald-500 */
   --accent-foreground: #ffffff;
 
-  --destructive: #dc322f;
-  --destructive-foreground: #fff;
+  --destructive: #ef4444;        /* red-500 */
+  --destructive-foreground: #ffffff;
 
-  --border: #93a1a1;
-  --input: #93a1a1;
-  --ring: #859900;
+  --border: #e5e7eb;             /* neutral-200 */
+  --input: #e5e7eb;
+  --ring: #d1d5db;               /* neutral-300 */
 
   --radius: 0.5rem;
+
 
   /* Optional: For charts or sidebar themes */
   --sidebar: #eee8d5;
@@ -49,33 +50,33 @@
 
 /* 🌚 Dark Mode — Solarized Dark */
 .dark {
-  --background: #002b36;
-  --foreground: #839496;
+  --background: #0f172a;
+  --foreground: #f8fafc;
 
-  --muted: #073642;
-  --muted-foreground: #93a1a1;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
 
-  --card: #073642;
-  --card-foreground: #eee8d5;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
 
-  --popover: #073642;
-  --popover-foreground: #eee8d5;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
 
-  --primary: #2aa198;
+  --primary: #3b82f6;
   --primary-foreground: #ffffff;
 
-  --secondary: #b58900;
+  --secondary: #6366f1;
   --secondary-foreground: #ffffff;
 
-  --accent: #268bd2;
+  --accent: #606865;
   --accent-foreground: #ffffff;
 
-  --destructive: #cb4b16;
+  --destructive: #ef4444;
   --destructive-foreground: #fff;
 
-  --border: #586e75;
-  --input: #586e75;
-  --ring: #859900;
+  --border: #334155;
+  --input: #334155;
+  --ring: #475569;
 
   --sidebar: #073642;
   --sidebar-foreground: #eee8d5;
@@ -85,6 +86,7 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #586e75;
   --sidebar-ring: #859900;
+  --radius: 0.5rem;
 }
 
 /* 🧠 Tailwind @theme inline (required by Shadcn) */

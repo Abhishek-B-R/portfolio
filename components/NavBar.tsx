@@ -1,6 +1,6 @@
 "use client"
 
-import { BookOpenText, Code2Icon, FileText, HomeIcon, PenTool, User2Icon } from "lucide-react"
+import { BookOpenText, Code2Icon, HomeIcon, Mail, PenTool, User2Icon } from "lucide-react"
 import Link from "next/link"
 import { ThemeToggle } from "./themeToggle"
 import { useEffect, useState } from "react"
@@ -10,7 +10,7 @@ const icons = [
   { url: "/about", icon: <User2Icon /> },
   { url: "/projects", icon: <Code2Icon /> },
   { url: "/blog", icon: <BookOpenText /> },
-  { url: "/resume", icon: <FileText /> },
+  { url: "/contact", icon: <Mail /> },
   { url: "/guestbook", icon: <PenTool /> },
 ]
 

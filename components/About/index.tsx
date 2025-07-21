@@ -64,7 +64,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 items-center justify-center gap-8 mb-12 min-h-[80vh]">
           {/* Personal Card */}
           <div className="lg:col-span-1">
             <Card className="overflow-hidden border-dashed border border-muted">
@@ -100,7 +100,7 @@ export default function AboutSection() {
           <div className="lg:col-span-2 space-y-6">
             {/* About */}
             <Card>
-              <CardContent className="px-6 py-5">
+              <CardContent className="px-6">
                 <h3 className="text-2xl font-bold mb-4 flex items-center">
                   <Rocket className="w-6 h-6 mr-2 text-purple-600" />
                   About Me
@@ -113,13 +113,16 @@ export default function AboutSection() {
                     Most of my work revolves around making developer tools, productivity hacks, and solving real-world problems through automation. I’m a solo builder by default, but love collaborating with smart folks.
                   </p>
                   <p>
-                    Want to see what I’ve built recently? Head over to the <strong>Projects</strong> section.
+                    Want to see what I’ve built recently? Head over to the <strong>Projects</strong> section - I&apos;ve built a mix of devtools, AI experiments, and decentralized systems.
+                  </p>
+                  <p>  
                     I am open for any internships, freelance gigs or full-time roles.
                   </p>
                 </div>
               </CardContent>
             </Card>
           </div>
+
           
         <div className="lg:col-span-3 space-y-6">
             {/* Tech Stack */}
@@ -220,7 +223,7 @@ export default function AboutSection() {
               </Button>
               <Button size="lg" variant="outline" className="border-white text-black dark:text-white cursor-pointer" onClick={() => window.open("/guestbook","_self")}>
                 <PenTool className="w-5 h-5 mr-2" />
-                Sign my Guestbook
+                Say hi in my guestbook
               </Button>
             </div>
             <p className="text-sm text-purple-200 mt-4">

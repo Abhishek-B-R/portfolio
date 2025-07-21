@@ -10,13 +10,13 @@ const socials = [{
   href: "https://github.com/Abhishek-B-R",
   icon: <Github className="h-7 w-7" />
 }, {
-  title: "LinkedIn",
-  href: "https://linkedin.com/in/abhi-br",
-  icon: <LinkedIn className="h-7 w-7" />
-}, {
   title: "Twitter",
   href: "https://twitter.com/abhi__br",
   icon: <Twitter className="h-7 w-7" />
+}, {
+  title: "LinkedIn",
+  href: "https://linkedin.com/in/abhi-br",
+  icon: <LinkedIn className="h-7 w-7" />
 },{
   title: "Discord",
   href: "https://discord.com/users/abhishekbr01",

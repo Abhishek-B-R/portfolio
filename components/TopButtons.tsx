@@ -11,7 +11,7 @@ export default function TopButtons() {
       <ThemeToggle />
       <Link href="/guestbook">
         <Button size="sm" className="bg-blue-600 cursor-pointer hover:bg-blue-800 text-white">
-          <PenTool /> Signin my Guestbook
+          <PenTool /> Sign my Guestbook
         </Button>
       </Link>
     </div>

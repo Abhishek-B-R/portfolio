@@ -35,8 +35,8 @@ import { format } from "date-fns"
 import { cn } from "@/lib/utils"
 
 const countryCodes = [
-  { code: "+1", country: "US", flag: "🇺🇸", name: "United States" },
-  { code: "+1", country: "CA", flag: "🇨🇦", name: "Canada" },
+  { code: "+1 (US)", country: "US", flag: "🇺🇸", name: "United States" },
+  { code: "+1 (CA)", country: "CA", flag: "🇨🇦", name: "Canada" },
   { code: "+44", country: "GB", flag: "🇬🇧", name: "United Kingdom" },
   { code: "+91", country: "IN", flag: "🇮🇳", name: "India" },
   { code: "+86", country: "CN", flag: "🇨🇳", name: "China" },

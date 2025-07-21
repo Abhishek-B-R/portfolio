@@ -7,7 +7,7 @@ export default function Page() {
   const { navbarWidth } = useNavbarWidth()
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <main
         className="pb-16 md:pb-0 transition-all duration-300"
         style={{

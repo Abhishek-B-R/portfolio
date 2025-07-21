@@ -1,237 +1,267 @@
+// components/AboutSection.tsx
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import Link from "next/link"
 import {
-  MapPin,
-  Github,
-  Twitter,
-  Zap,
-  Heart,
-  Rocket,
-  Brain,
-  Pizza,
-  Gamepad2,
-  Headphones,
-  Camera,
   Mail,
   PenTool,
+  Github,
+  Twitter,
+  MapPin,
+  Rocket,
+  Zap,
+  Brain,
+  Heart,
 } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
+const techStack = [
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Java",
+  "Python",
+  "Solidity",
+  "Ethereum",
+  "PostgreSQL",
+  "MongoDB",
+  "AWS",
+  "GitHub Actions",
+  "Docker",
+  "Tailwind",
+  "Git",
+  "tRPC",
+]
+
+const learning = [
+  "Rust",
+  "Solana Dev",
+  "Golang",
+  "AI Agents",
+  "Kubernetes",
+  "Three.js",
+]
+
+const funFacts = [
+  "💻 Built my first full-stack app solo before I knew it was a thing.",
+  "🧠 Learned blockchain by doing, not just reading.",
+  "☕ Peak productivity happens after dark.",
+  "🎮 Gaming breaks double as debugging therapy.",
+  "🧪 I experiment end-to-end—from infra to UI flourishes.",
+  "📚 Always juggling at least three learning paths.",
+]
+
 export default function AboutSection() {
-  const techStack = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Java",
-    "Python",
-    "Solidity",
-    "Ethereum",
-    "PostgreSQL",
-    "MongoDB",
-    "AWS",
-    "Github Actions",
-    "Docker",
-    "Tailwind",
-    "Git",
-    "tRPC"
-  ]
-
-  const funFacts = [
-    "💻 Started building full-stack apps solo before anyone told me it needed a team.",
-    "🧠 Learned blockchain by doing, not watching.",
-    "☕ Night owl productivity mode is undefeated.",
-    "🎮 Game breaks = debugging therapy.",
-    "🧪 I experiment with everything from infra to UI animations.",
-    "📚 Always in the middle of 3 learning tracks at once."
-  ]
-
-  const currentlyLearning = ["Rust", "Solana Dev", "Golang", "AI Agents","Kubernetes","Three.js"]
-
   return (
-    <div className="min-h-screen py-12 px-4 mt-50">
-      <div className="max-w-4xl mx-auto">
-        {/* Casual Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Hey there! 👋
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            I&apos;m a developer who loves building fast, smart, and scalable web experiences.
-          </p>
+    <section
+      id="about"
+      className="w-full py-20 px-6 text-gray-800 dark:text-gray-200 xl:ml-10 mt-30"
+    >
+      {/* Intro */}
+      <header className="max-w-4xl mx-auto text-center space-y-4">
+        <h2 className="text-4xl md:text-5xl font-bold">
+          Under the Hood
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+          The tools I wield, the skills I’m honing, and the quirks I embrace
+          as a hands-on developer.
+        </p>
+      </header>
+
+      <div className="mt-16 max-w-5xl mx-auto space-y-20 grid grid-rows-1">
+        {/* Profile + About */}
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
+          {/* Profile Card */}
+          <article
+            className="
+              flex-1
+              backdrop-blur-lg
+              bg-white/60 border border-gray-200
+              dark:bg-gray-900/40 dark:border-gray-700
+              rounded-2xl p-8 text-center
+              shadow-lg
+            "
+          >
+            <h3 className="text-2xl font-semibold">Abhishek B.R</h3>
+            <p className="mt-1 text-sm text-blue-600 dark:text-blue-400 font-medium">
+              Full Stack & Web3 Developer
+            </p>
+            <div className="flex items-center justify-center text-sm text-gray-600 dark:text-gray-400 mt-2">
+              <MapPin className="w-4 h-4 mr-1" /> India
+            </div>
+
+            <div className="flex justify-center gap-3 mt-6">
+              <Button asChild variant="outline" size="sm">
+                <Link
+                  href="https://github.com/Abhishek-B-R"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <Github className="w-4 h-4 mr-1" /> GitHub
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link
+                  href="https://x.com/abhi__br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <Twitter className="w-4 h-4 mr-1" /> Twitter
+                </Link>
+              </Button>
+            </div>
+
+            <ul className="mt-6 space-y-2 text-sm text-gray-700 dark:text-gray-300 text-left">
+              <li>☕ Fuelled by coffee & clean, readable code.</li>
+              <li>📦 Crafting developer tools that delight users.</li>
+              <li>🧠 Passionate about rapid prototyping & lifelong learning.</li>
+            </ul>
+
+            <p className="mt-6 text-sm text-gray-800 dark:text-gray-200">
+              Currently open to freelance projects, internships, or full-time roles.
+            </p>
+          </article>
+
+          {/* About Me Article */}
+          <article
+            className="
+              flex-2
+              backdrop-blur-lg
+              bg-white/60 border border-gray-200
+              dark:bg-gray-900/40 dark:border-gray-700
+              rounded-2xl p-8
+              shadow-lg
+              py-20
+            "
+          >
+            <h3 className="flex items-center text-2xl font-semibold mb-4">
+              <Rocket className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" />
+              About Me
+            </h3>
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 text-base">
+              <p>
+                I design and develop robust full-stack applications,
+                intuitive developer tools, and automated pipelines—
+                leveraging blockchain and AI to solve real problems.
+                From browser automations to decentralized monitors,
+                I deliver clean, performant solutions at speed.
+              </p>
+              <p>
+                While I excel as a solo builder, I thrive collaborating
+                with driven teams. I champion originality, thoughtful UI,
+                and maintainable code.
+              </p>
+              <p>
+                Ready to build something impactful together? Let’s connect!
+              </p>
+            </div>
+          </article>
         </div>
 
-        <div className="grid lg:grid-cols-3 items-center justify-center gap-8 mb-12 min-h-[80vh]">
-          {/* Personal Card */}
-          <div className="lg:col-span-1">
-            <Card className="overflow-hidden border-dashed border border-muted">
-              <CardContent className="p-6 text-center">
-                <h2 className="text-2xl font-bold mb-1">Abhishek B.R</h2>
-                <p className="text-primary font-medium mb-2">Full-Stack & Web3 Developer</p>
-                <div className="flex items-center justify-center text-muted-foreground mb-4">
-                  <MapPin className="w-4 h-4 mr-1" />
-                  <span className="text-sm">India</span>
-                </div>
-
-                <div className="flex justify-center space-x-2 mb-4">
-                  <Button size="sm" variant="outline" className="cursor-pointer" onClick={() => window.open("https://github.com/Abhishek-B-R","_blank")}>
-                    <Github className="w-4 h-4 mr-1" />
-                    GitHub
-                  </Button>
-                  <Button size="sm" variant="outline" className="cursor-pointer" onClick={() => window.open("https://x.com/abhi__br","_blank")}>
-                    <Twitter className="w-4 h-4 mr-1" />
-                    Twitter
-                  </Button>
-                </div>
-
-                <div className="text-sm text-muted-foreground space-y-1">
-                  <div>☕ Fueled by code & caffeine</div>
-                  <div>📦 Loves building tools that people actually use</div>
-                  <div>🧠 Obsessed with learning & creating</div>
-                </div>
-              </CardContent>
-            </Card>
+        {/* What I Use */}
+        <section className="space-y-4">
+          <h3 className="flex items-center text-xl font-semibold">
+            <Zap className="w-5 h-5 mr-2 text-yellow-600 dark:text-yellow-400" />
+            What I Use
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <Badge
+                key={tech}
+                className="
+                  bg-gray-100 text-gray-800 border-gray-200
+                  dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700
+                  text-sm
+                "
+              >
+                {tech}
+              </Badge>
+            ))}
           </div>
+        </section>
 
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* About */}
-            <Card>
-              <CardContent className="px-6">
-                <h3 className="text-2xl font-bold mb-4 flex items-center">
-                  <Rocket className="w-6 h-6 mr-2 text-purple-600" />
-                  About Me
-                </h3>
-                <div className="space-y-4 text-muted-foreground">
-                  <p>
-                    I enjoy building full-stack apps, especially those enhanced by blockchain or AI. I&apos;ve built many stuffs from basic browser automations via Puppeteer to uptime monitors for decentralized web.
-                  </p>
-                  <p>
-                    Most of my work revolves around making developer tools, productivity hacks, and solving real-world problems through automation. I’m a solo builder by default, but love collaborating with smart folks.
-                  </p>
-                  <p>
-                    Want to see what I’ve built recently? Head over to the <strong>Projects</strong> section - I&apos;ve built a mix of devtools, AI experiments, and decentralized systems.
-                  </p>
-                  <p>  
-                    I am open for any internships, freelance gigs or full-time roles.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+        {/* Currently Learning */}
+        <section className="space-y-4">
+          <h3 className="flex items-center text-xl font-semibold">
+            <Brain className="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400" />
+            Currently Learning
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {learning.map((item) => (
+              <Badge
+                key={item}
+                className="
+                  bg-blue-100 text-blue-800 border-blue-200
+                  dark:bg-blue-900/30 dark:text-blue-200 dark:border-blue-700
+                  text-sm
+                "
+              >
+                {item}
+              </Badge>
+            ))}
           </div>
-
-          
-        <div className="lg:col-span-3 space-y-6">
-            {/* Tech Stack */}
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 flex items-center">
-                  <Zap className="w-5 h-5 mr-2 text-yellow-500" />
-                  What I Use
-                </h3>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {techStack.map((tech, index) => (
-                    <Badge key={index} variant="secondary" className="px-3 py-1">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  If there&apos;s something I don&apos;t know, I pick it up fast. Google, ChatGPT and docs are my co-founders.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Currently Learning */}
-            <Card className="bg-muted/50">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 flex items-center">
-                  <Brain className="w-5 h-5 mr-2 text-blue-600" />
-                  Currently Learning
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {currentlyLearning.map((item, index) => (
-                    <Badge key={index} className="bg-blue-100 text-blue-800">
-                      {item}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+        </section>
 
         {/* Fun Facts */}
-        <Card className="mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-2xl font-bold mb-6 text-center flex items-center justify-center">
-              <Heart className="w-6 h-6 mr-2 text-red-500" />
-              Random Developer Things
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {funFacts.map((fact, index) => (
-                <div
-                  key={index}
-                  className="flex items-center p-3 bg-muted rounded-lg"
-                >
-                  <span className="text-muted-foreground">{fact}</span>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <section className="space-y-4">
+          <h3 className="flex items-center text-xl font-semibold">
+            <Heart className="w-5 h-5 mr-2 text-red-600 dark:text-red-400" />
+            Random Dev Things
+          </h3>
+          <ul className="grid sm:grid-cols-2 gap-4">
+            {funFacts.map((fact) => (
+              <li
+                key={fact}
+                className="
+                  bg-white/60 border border-gray-200
+                  dark:bg-gray-900/40 dark:border-gray-700
+                  backdrop-blur p-4 rounded-lg text-sm
+                  text-gray-700 dark:text-gray-300
+                "
+              >
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-        {/* Hobbies */}
-        <Card className="mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-bold mb-6 text-center">When I&apos;m Not Coding</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-orange-50 dark:bg-orange-950 rounded-lg">
-                <Pizza className="w-8 h-8 mx-auto mb-2 text-orange-600" />
-                <span className="text-sm font-medium">Trying weird pizzas</span>
-              </div>
-              <div className="text-center p-4 bg-green-50 dark:bg-green-950 rounded-lg">
-                <Gamepad2 className="w-8 h-8 mx-auto mb-2 text-green-600" />
-                <span className="text-sm font-medium">Gaming breaks</span>
-              </div>
-              <div className="text-center p-4 bg-purple-50 dark:bg-purple-950 rounded-lg">
-                <Headphones className="w-8 h-8 mx-auto mb-2 text-purple-600" />
-                <span className="text-sm font-medium">Lo-fi vibes</span>
-              </div>
-              <div className="text-center p-4 bg-blue-50 dark:bg-blue-950 rounded-lg">
-                <Camera className="w-8 h-8 mx-auto mb-2 text-blue-600" />
-                <span className="text-sm font-medium">Casual photography</span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="relative rounded-2xl p-10 text-center shadow-xl bg-background/60 backdrop-blur-md border border-border overflow-hidden">
+          {/* Subtle light tint */}
+          <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-transparent dark:from-primary/5" />
 
-        {/* Call to Action */}
-        <Card className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
-          <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">Let’s Connect 👇</h3>
-            <p className="mb-6 max-w-2xl mx-auto text-purple-100">
-              Interested in my work, or have a cool idea? You can either drop me a message or sign my guestbook!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="bg-white text-purple-600 cursor-pointer" onClick={() => window.open("/contact","_self")}>
-                <Mail className="w-5 h-5 mr-2" />
-                Start a convo
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-black dark:text-white cursor-pointer" onClick={() => window.open("/guestbook","_self")}>
-                <PenTool className="w-5 h-5 mr-2" />
-                Say hi in my guestbook
-              </Button>
-            </div>
-            <p className="text-sm text-purple-200 mt-4">
-              I usually reply within a day — unless I’m deep in a Solana smart contracts 😄
-            </p>
-          </CardContent>
-        </Card>
+          <h3 className="text-2xl font-bold mb-3 text-foreground">
+            Ready to collaborate?
+          </h3>
+          <p className="mb-6 max-w-2xl mx-auto text-muted-foreground">
+            Have an idea, a challenge, or just want to say hi? Drop me a line
+            or sign my guestbook — I usually reply within 24 hours.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200">
+              <Link href="/contact" className="flex items-center">
+                <Mail className="w-5 h-5 mr-2" /> Start a convo
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-border text-foreground hover:bg-muted/60 transition-colors duration-200"
+            >
+              <Link href="/guestbook" className="flex items-center">
+                <PenTool className="w-5 h-5 mr-2" /> Sign the Guestbook
+              </Link>
+            </Button>
+          </div>
+        </section>
+
       </div>
-    </div>
+    </section>
   )
 }

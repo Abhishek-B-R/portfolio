@@ -93,15 +93,10 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-
-  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
-  const heightTransformIcon = useTransform(
-    distance,
-    [-150, 0, 150],
-    [20, 40, 20],
-  );
+  const widthTransform = useTransform(distance, [-150, 0, 150], [56, 96, 56]) // ~14rem → 24rem
+  const heightTransform = useTransform(distance, [-150, 0, 150], [56, 96, 56])
+  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [32, 52, 32]) // ~icon from 8rem to 13rem
+  const heightTransformIcon = useTransform(distance, [-150, 0, 150], [32, 52, 32])
 
   const width = useSpring(widthTransform, {
     mass: 0.1,
@@ -134,7 +129,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800 shadow-md"
       >
         <AnimatePresence>
           {hovered && (

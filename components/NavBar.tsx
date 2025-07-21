@@ -2,7 +2,6 @@
 
 import { BookOpenText, Code2Icon, HomeIcon, Mail, PenTool, User2Icon } from "lucide-react"
 import Link from "next/link"
-import { ThemeToggle } from "./themeToggle"
 import { useEffect, useState } from "react"
 
 const icons = [
@@ -65,9 +64,6 @@ export default function NavBar() {
               </Link>
             </li>
           ))}
-          <li>
-            <ThemeToggle />
-          </li>
         </ul>
       </nav>
     )
@@ -90,9 +86,6 @@ export default function NavBar() {
             </Link>
           </li>
         ))}
-        <li>
-          <ThemeToggle />
-        </li>
       </ul>
     </nav>
   )

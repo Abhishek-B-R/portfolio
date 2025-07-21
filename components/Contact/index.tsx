@@ -17,9 +17,6 @@ import {
   Mail,
   Send,
   Clock,
-  Github,
-  Linkedin,
-  Twitter,
   User,
   MessageSquare,
   Globe,
@@ -33,6 +30,7 @@ import {
 import { toast } from "sonner"
 import { format } from "date-fns"
 import { cn } from "@/lib/utils"
+import { SocialSimple } from "../Landing/socials"
 
 const countryCodes = [
   { code: "+1 (US)", country: "US", flag: "🇺🇸", name: "United States" },
@@ -288,35 +286,7 @@ export default function ContactSection() {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-4 mb-8">
-            <a
-              href="https://github.com/Abhishek-B-R"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-muted/50 hover:bg-muted transition-all duration-200 hover:scale-105"
-              aria-label="GitHub"
-            >
-              <Github className="h-5 w-5 text-muted-foreground hover:text-foreground" />
-            </a>
-            <a
-              href="https://linkedin.com/in/abhi-br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-muted/50 hover:bg-muted transition-all duration-200 hover:scale-105"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5 text-muted-foreground hover:text-foreground" />
-            </a>
-            <a
-              href="https://twitter.com/abhi__br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-muted/50 hover:bg-muted transition-all duration-200 hover:scale-105"
-              aria-label="Twitter"
-            >
-              <Twitter className="h-5 w-5 text-muted-foreground hover:text-foreground" />
-            </a>
-          </div>
+          <SocialSimple/>
 
           {/* Tabs */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -393,11 +363,11 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   disabled={emailLoading}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-base font-medium"
+                  className="w-full bg-primary hover:bg-primary/90 cursor-pointer text-primary-foreground py-3 text-base font-medium"
                 >
                   {emailLoading ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2 pointer-events-none"></div>
                       Sending...
                     </>
                   ) : (
@@ -456,7 +426,7 @@ export default function ContactSection() {
                       variant="ghost"
                       size="sm"
                       onClick={() => setMeetingStep(1)}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 cursor-pointer"
                     >
                       <ArrowLeft className="h-4 w-4" />
                       Back
@@ -595,7 +565,7 @@ export default function ContactSection() {
                   <Button
                     onClick={handleProceedToConfirm}
                     disabled={!meetingForm.date || !meetingForm.time}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-base font-medium h-12"
+                    className="w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white py-3 text-base font-medium h-12"
                   >
                     Continue to Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -757,13 +727,13 @@ export default function ContactSection() {
               </div>
 
               <div className="flex gap-3 pt-4">
-                <Button type="button" variant="outline" onClick={() => setShowConfirmDialog(false)} className="flex-1">
+                <Button type="button" variant="outline" onClick={() => setShowConfirmDialog(false)} className="flex-1 cursor-pointer">
                   Back
                 </Button>
-                <Button type="submit" disabled={meetingLoading} className="flex-1 bg-primary hover:bg-primary/90">
+                <Button type="submit" disabled={meetingLoading} className="flex-1 bg-primary hover:bg-primary/90 cursor-pointer">
                   {meetingLoading ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2 pointer-events-none"></div>
                       Booking...
                     </>
                   ) : (

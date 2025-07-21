@@ -1,7 +1,7 @@
-import { ArrowRight, Download, Github, Linkedin, Twitter } from "lucide-react"
+import { ArrowRight, Download } from "lucide-react"
 import { Button } from "../ui/button"
 import { ContainerTextFlip } from "../ui/container-text-flip"
-import { FloatingDock } from "../ui/floating-dock"
+import Social from "./socials"
 
 export default function Hero() {
   const handleDownloadResume = () => {
@@ -14,25 +14,11 @@ export default function Hero() {
     document.body.removeChild(link)
   }
 
-  const socials = [{
-    title: "GitHub",
-    href: "https://github.com/Abhishek-B-R",
-    icon: <Github className="h-5 w-5" />
-  }, {
-    title: "LinkedIn",
-    href: "https://linkedin.com/in/abhi-br",
-    icon: <Linkedin className="h-5 w-5" />
-  }, {
-    title: "Twitter",
-    href: "https://twitter.com/abhi__br",
-    icon: <Twitter className="h-5 w-5" />
-  }]
-
   return (
     <div className="flex flex-col items-center justify-center text-center px-6 py-16 md:px-16 lg:px-24">
-      <div className="h-[250px]"></div>
+      <div className="h-[200px]"></div>
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-2">
-        Hey, I&apos;m <span className="text-primary font-bold">Abhishek BR</span>
+        Hi, I&apos;m <span className="text-primary font-bold">Abhishek BR</span>
       </h1>
 
       <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6">
@@ -74,7 +60,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button
             size="lg"
-            className="group bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+            className="group bg-primary cursor-pointer hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
           >
             Let&apos;s Connect
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -84,7 +70,7 @@ export default function Hero() {
             variant="outline"
             size="lg"
             onClick={()=> window.location.href = "/projects"}
-            className="px-8 py-3 text-base font-semibold rounded-lg border hover:bg-muted/50 transition-all duration-200 bg-transparent"
+            className="px-8 py-3 text-base font-semibold cursor-pointer rounded-lg border hover:bg-muted/50 transition-all duration-200 bg-transparent"
           >
             View My Work
           </Button>
@@ -93,7 +79,7 @@ export default function Hero() {
             variant="secondary"
             size="lg"
             onClick={handleDownloadResume}
-            className="group px-8 py-3 text-base font-semibold rounded-lg bg-muted hover:bg-muted/80 transition-all duration-200"
+            className="group px-8 py-3 text-base font-semibold cursor-pointer rounded-lg bg-muted hover:bg-muted/80 transition-all duration-200"
           >
             <Download className="mr-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
             Download Resume
@@ -102,7 +88,7 @@ export default function Hero() {
       </div>
 
       {/* Social Links - Simplified but keep individual hover colors */}
-      <FloatingDock items={socials}/>
+      <Social/>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -117,7 +103,7 @@ export default function Hero() {
           Want a quick overview?{" "}
           <button
             onClick={handleDownloadResume}
-            className="text-primary hover:text-primary/80 underline underline-offset-2 font-medium transition-colors"
+            className="text-primary hover:text-primary/80 cursor-pointer underline underline-offset-2 font-medium transition-colors"
           >
             Get my resume
           </button>

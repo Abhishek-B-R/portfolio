@@ -1,11 +1,21 @@
-import ContactSection from "@/components/Contact/forms";
-import NavBar from "@/components/NavBar";
+"use client";
+import ContactSection from "@/components/Contact";
+import { useNavbarWidth } from "@/components/NavBar";
 
-export default function page() {
+export default function Page() {
+  const { navbarWidth } = useNavbarWidth()
+
   return (
-    <>
-      <NavBar/>
-      <ContactSection/>
-    </>
+    <div className="min-h-screen">
+      <main
+        className="pb-16 md:pb-0 transition-all duration-300"
+        style={{
+          marginLeft: navbarWidth > 0 ? `${navbarWidth}px` : "0px",
+          marginRight: navbarWidth > 0 ? `${navbarWidth}px` : "0px",
+        }}
+      >
+        <ContactSection />
+      </main>
+    </div>
   )
-};
+}

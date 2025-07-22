@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/themeProvider";
 import NavBar from "@/components/NavBar";
 import TopButtons from "@/components/TopButtons";
+import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <NavBar/>
-          <TopButtons/>
-          {children}
+          <Providers>
+            <NavBar/>
+            <TopButtons/>
+            {children}
+          </Providers>
         </ThemeProvider>
       </body>
     </html>

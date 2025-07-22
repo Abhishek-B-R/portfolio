@@ -28,3 +28,12 @@ model Projects {
   order        Int?             // For custom sorting
   duration     String?          // How long you worked on it
 }
+
+model GuestBook {
+  id        Int      @id @default(autoincrement())
+  name      String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@map("GuestBook")
+}

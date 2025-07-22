@@ -137,7 +137,7 @@ export default function GuestbookForm({
                     >
                     <EmojiPicker
                       onEmojiClick={handleEmojiClick}
-                      theme={typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? Theme.DARK : Theme.LIGHT}
+                      theme={document?.querySelector('html')?.className === 'dark'  ? Theme.DARK : Theme.LIGHT}
                       lazyLoadEmojis={true}
                     />
                     </div>

@@ -1,0 +1,28 @@
+const techIconMap: Record<string, { icon: string; bg: string }> = {
+  "Next.js":           { icon: "nextdotjs",      bg: "#ffffff" },
+  "React":             { icon: "react",          bg: "#ffffff" },
+  "TypeScript":        { icon: "typescript",     bg: "#ffffff" },
+  "Tailwind CSS":      { icon: "tailwindcss",    bg: "#ffffff" },
+  "Node.js":           { icon: "nodedotjs",      bg: "#ffffff" },
+  "Express":           { icon: "express",        bg: "#ffffff" },
+  "Shadcn UI":         { icon: "shadcnui",       bg: "#ffffff" },
+  "WebSockets":        { icon: "socket.io",      bg: "#ffffff" },
+  "PostgreSQL":        { icon: "postgresql",     bg: "#ffffff" },
+  "Ethereum":          { icon: "ethereum",       bg: "#ffffff" },
+  "Solidity":          { icon: "solidity",       bg: "#ffffff" },
+  "Docker":            { icon: "docker",         bg: "#ffffff" },
+  "CI/CD":             { icon: "githubactions",  bg: "#ffffff" },
+  "Prisma":            { icon: "prisma",         bg: "#ffffff" },
+  "Chrome Extension":  { icon: "googlechrome",   bg: "#ffffff" },
+  "GitHub OAuth":      { icon: "github",         bg: "#ffffff" },
+  "Email API":         { icon: "maildotru",      bg: "#ffffff" },
+  "SMS API":           { icon: "twilio",         bg: "#ffffff" },
+  "Ethers.js":         { icon: "ethers",         bg: "#ffffff" },
+  "MongoDB":           { icon: "mongodb",        bg: "#ffffff" },
+  "NextAuth":          { icon: "nextauth",       bg: "#ffffff" },
+  "Clerk":             { icon: "clerk",          bg: "#ffffff" },
+  "Threejs":           { icon: "three.js",       bg: "#ffffff" },
+  "Gemini API":        { icon: "googlegemini",   bg: "#ffffff" }
+};
+
+export default techIconMap

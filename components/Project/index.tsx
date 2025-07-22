@@ -1,93 +1,139 @@
 "use client"
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal"
 
-const projects = [
-  {
-    title: "AI-Powered Task Manager",
-    description:
-      "A smart task management application that uses machine learning to prioritize tasks, predict completion times, and suggest optimal work schedules. Built with Next.js, TypeScript, and OpenAI API integration.",
-    content: (
-      <div className="h-full w-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white">
-        <div className="text-center">
-          <div className="text-6xl mb-4">🤖</div>
-          <h3 className="text-2xl font-bold mb-2">Smart AI Assistant</h3>
-          <p className="text-lg opacity-90">Intelligent task prioritization</p>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "DeFi Trading Dashboard",
-    description:
-      "A comprehensive decentralized finance dashboard for tracking portfolios, analyzing market trends, and executing trades across multiple DEXs. Features real-time data, advanced charting, and automated trading strategies.",
-    content: (
-      <div className="h-full w-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white">
-        <div className="text-center">
-          <div className="text-6xl mb-4">📈</div>
-          <h3 className="text-2xl font-bold mb-2">DeFi Analytics</h3>
-          <p className="text-lg opacity-90">Real-time trading insights</p>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Cloud Infrastructure Automation",
-    description:
-      "DevOps automation platform that streamlines deployment pipelines, manages infrastructure as code, and provides comprehensive monitoring. Built with Terraform, Docker, Kubernetes, and AWS services.",
-    content: (
-      <div className="h-full w-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white">
-        <div className="text-center">
-          <div className="text-6xl mb-4">☁️</div>
-          <h3 className="text-2xl font-bold mb-2">Cloud Automation</h3>
-          <p className="text-lg opacity-90">Scalable infrastructure</p>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Real-time Collaboration Platform",
-    description:
-      "A modern collaboration tool with real-time document editing, video conferencing, and project management features. Implements WebRTC for peer-to-peer communication and WebSockets for instant updates.",
-    content: (
-      <div className="h-full w-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white">
-        <div className="text-center">
-          <div className="text-6xl mb-4">🚀</div>
-          <h3 className="text-2xl font-bold mb-2">Team Collaboration</h3>
-          <p className="text-lg opacity-90">Real-time connectivity</p>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Blockchain Identity Verification",
-    description:
-      "A decentralized identity verification system using blockchain technology to provide secure, privacy-preserving authentication. Implements zero-knowledge proofs and smart contracts for trustless verification.",
-    content: (
-      <div className="h-full w-full bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center text-white">
-        <div className="text-center">
-          <div className="text-6xl mb-4">🔐</div>
-          <h3 className="text-2xl font-bold mb-2">Secure Identity</h3>
-          <p className="text-lg opacity-90">Blockchain verification</p>
-        </div>
-      </div>
-    ),
-  },
-]
+import { useEffect, useState } from "react"
+import { FaGithub, FaLocationArrow } from "react-icons/fa6"
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
+import { PinContainer } from "@/components/ui/3d-pin"
+import Image from "next/image"
+import { Loader2 } from "lucide-react"
+import techIconMap from "./techIconMap"
 
-export default function ProjectsShowcase() {
+interface Project {
+  id: string
+  name: string
+  description?: string
+  thumbnail?: string
+  liveUrl?: string
+  repoUrl?: string
+  technologies: string[]
+  createdAt: string
+  updatedAt: string
+  order?: number
+  duration?: string
+}
+
+export default function RecentProjects() {
+  const [projects, setProjects] = useState<Project[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
+
+  useEffect(()=>{
+    const mode = document.querySelector("html")?.classList.contains("dark")
+    setIsDarkMode(mode || false)
+  },[isDarkMode])
+
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch projects")
+        return res.json()
+      })
+      .then((data) => {
+        setProjects(data)
+        setIsLoading(false)
+      })
+      .catch((err) => {
+        console.error("Error fetching projects:", err)
+        setError(err.message)
+        setIsLoading(false)
+      })
+  }, [])
+
+  if (isLoading) {
+    return (
+      <section className="py-20" id="projects">
+        <div className="flex justify-center items-center mt-16">
+          <Loader2 className="w-8 h-8 animate-spin text-purple-600" />
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="py-20" id="projects">
+        <div className="text-center mt-16">
+          <p className="text-red-500">Error loading projects: {error}</p>
+        </div>
+      </section>
+    )
+  }
+
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Featured <span className="text-primary">Projects</span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of innovative solutions I&apos;ve built, from AI-powered applications to decentralized systems. Each
-            project represents a unique challenge and creative solution.
-          </p>
+    <section className="py-20" id="projects">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-14 mt-16">
+        <div className="grid grid-cols-2">
+          {projects.map((item) => {
+            const techItems = item.technologies.map((tech, idx) => ({
+              id: idx,
+              name: tech,
+              designation: "",
+              image: techIconMap[tech]?.icon ?? "github",
+              bg: techIconMap[tech]?.bg ?? "#ffffff"
+          }))
+          return (
+            <div key={item.id} className="col-span-2 2xl:col-span-1 mx-10 items-center sm:w-[570px] w-[85vw]" onClick={()=> window.location.href=item.liveUrl ?? "#"}>
+              <PinContainer title={item.liveUrl ?? "Project Preview"} href={item.liveUrl ?? "#"}>
+                <div className="flex flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] sm:w-[30rem] 2xl:w-[34rem] h-[12rem] 2xl:h-[15rem] ">
+                  {item.thumbnail && (
+                    <Image
+                      src={item.thumbnail || "/placeholder.svg"}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                      onError={(e) => {
+                        // Hide broken image and show fallback
+                        const target = e.target as HTMLImageElement
+                        target.style.display = "none"
+                      }}
+                    />
+                  )}
+
+                  {/* Live badge */}
+                  {item.liveUrl && (
+                    <div className="absolute bottom-3 right-3 flex items-center text-sm text-purple-400 font-medium bg-black/60 px-3 py-1 rounded-full pointer-events-none">
+                      Live Website <FaLocationArrow className="ml-2" />
+                    </div>
+                  )}
+                </div>
+              </PinContainer>
+
+              <div className="mt-6 p-4">
+                <h2 className="text-xl font-semibold text-foreground mb-1">{item.name}</h2>
+                {item.description && (
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{item.description}</p>
+                )}
+
+                <div className="mb-4 flex justify-start">
+                  <AnimatedTooltip items={techItems} />
+                </div>
+
+                {item.repoUrl && (
+                  <a
+                    href={item.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-foreground hover:text-purple-600 border border-border px-3 py-1 rounded-md transition-colors"
+                  >
+                    <FaGithub /> GitHub Repo
+                  </a>
+                )}
+              </div>
+            </div>
+          )
+        })}
         </div>
-        <StickyScroll content={projects} />
       </div>
     </section>
   )

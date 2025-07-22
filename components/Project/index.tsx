@@ -7,6 +7,7 @@ import { PinContainer } from "@/components/ui/3d-pin"
 import Image from "next/image"
 import { Loader2 } from "lucide-react"
 import techIconMap from "./techIconMap"
+import { useDarkModeWatcher } from "./darkModeWatcher"
 
 interface Project {
   id: string
@@ -26,18 +27,13 @@ export default function RecentProjects() {
   const [projects, setProjects] = useState<Project[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
-
-  useEffect(()=>{
-    const mode = document.querySelector("html")?.classList.contains("dark")
-    setIsDarkMode(mode || false)
-  },[isDarkMode])
+  const isDarkMode = useDarkModeWatcher()
 
   useEffect(() => {
     fetch("/api/projects")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch projects")
-        return res.json()
+          return res.json()
       })
       .then((data) => {
         setProjects(data)
@@ -48,7 +44,17 @@ export default function RecentProjects() {
         setError(err.message)
         setIsLoading(false)
       })
-  }, [])
+    }, [])
+    
+    const getThumbnail = (url: string, isDarkMode: boolean): string => {
+      if (!url.includes(".")) return url; // fallback safety
+  
+      const lastDotIndex = url.lastIndexOf(".");
+      const base = url.slice(0, lastDotIndex);
+      const ext = url.slice(lastDotIndex);
+  
+      return isDarkMode ? url : `${base}-light${ext}`;
+    };
 
   if (isLoading) {
     return (
@@ -83,12 +89,12 @@ export default function RecentProjects() {
               bg: techIconMap[tech]?.bg ?? "#ffffff"
           }))
           return (
-            <div key={item.id} className="col-span-2 2xl:col-span-1 mx-10 items-center sm:w-[570px] w-[85vw]" onClick={()=> window.location.href=item.liveUrl ?? "#"}>
+            <div key={item.id} className="col-span-2 2xl:col-span-1 mx-10 items-center sm:w-[570px] w-[85vw]" onClick={()=> window.open(item.liveUrl ?? "#", "_blank")}>
               <PinContainer title={item.liveUrl ?? "Project Preview"} href={item.liveUrl ?? "#"}>
                 <div className="flex flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] sm:w-[30rem] 2xl:w-[34rem] h-[12rem] 2xl:h-[15rem] ">
                   {item.thumbnail && (
                     <Image
-                      src={item.thumbnail || "/placeholder.svg"}
+                      src={getThumbnail(item.thumbnail, isDarkMode)}
                       alt={item.name}
                       fill
                       className="object-cover"

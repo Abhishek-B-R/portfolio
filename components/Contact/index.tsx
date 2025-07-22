@@ -275,7 +275,7 @@ export default function ContactSection() {
   return (
     <section className="py-20 bg-background max-h-[700px]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-card border border-border rounded-2xl p-8 shadow-lg">
+        <div className="bg-background/80 border-2 border-border/40 rounded-2xl p-8 backdrop-blur-md shadow-xl">
           {/* Header */}
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Get in Touch</h2>
@@ -290,7 +290,7 @@ export default function ContactSection() {
 
           {/* Tabs */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsList className="grid w-full grid-cols-2 mb-8 bg-muted/20 border border-border/30 rounded-lg p-1 shadow-sm">
               <TabsTrigger value="message" className="flex items-center gap-2">
                 <MessageSquare className="h-4 w-4" />
                 Send Message
@@ -318,7 +318,7 @@ export default function ContactSection() {
                         value={emailForm.name}
                         onChange={(e) => setEmailForm({ ...emailForm, name: e.target.value })}
                         required
-                        className="pl-10 bg-muted/50 border-border"
+                        className="pl-10 bg-muted/20 border-border/40 focus-visible:ring-ring focus-visible:ring-2"
                       />
                     </div>
                   </div>
@@ -336,7 +336,7 @@ export default function ContactSection() {
                         value={emailForm.email}
                         onChange={(e) => setEmailForm({ ...emailForm, email: e.target.value })}
                         required
-                        className="pl-10 bg-muted/50 border-border"
+                        className="pl-10 bg-muted/20 border-border/40 focus-visible:ring-ring focus-visible:ring-2"
                       />
                     </div>
                   </div>
@@ -576,7 +576,7 @@ export default function ContactSection() {
           </Tabs>
 
           {/* Alternative Contact */}
-          <div className="text-center mt-8 pt-6 border-t border-border">
+          <div className="text-center mt-8 pt-6 border-t border-border/40">
             <p className="text-muted-foreground">
               or mail me at{" "}
               <a
@@ -699,7 +699,7 @@ export default function ContactSection() {
                         placeholder="Enter phone number"
                         value={meetingForm.phoneNumber}
                         onChange={(e) => setMeetingForm({ ...meetingForm, phoneNumber: e.target.value })}
-                        className="pl-10 bg-muted/50 border-border"
+                        className="pl-10 bg-muted/20 border-border/40 focus-visible:ring-ring focus-visible:ring-2"
                         required={meetingForm.location === "phone"}
                       />
                     </div>

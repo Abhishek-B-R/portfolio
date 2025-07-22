@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Send, Loader2, Smile } from "lucide-react"
+import { Loader2, Smile, PenTool } from "lucide-react"
 import { toast } from "sonner"
 import type { EmojiClickData } from "emoji-picker-react"
 import { Theme } from "emoji-picker-react"
@@ -156,7 +156,7 @@ export default function GuestbookForm({
                   </>
                 ) : (
                   <>
-                    <Send className="w-4 h-4 mr-2" />
+                    <PenTool className="w-4 h-4" />
                     Sign
                   </>
                 )}

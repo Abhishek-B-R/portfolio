@@ -81,6 +81,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button
               size="lg"
+              onClick={() => (window.location.href = "/contact")}
               className="group bg-primary cursor-pointer hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
             >
               Let&apos;s Connect

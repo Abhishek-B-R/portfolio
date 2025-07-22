@@ -14,35 +14,42 @@ import {
   Heart,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiPostgresql, SiSolidity, SiTailwindcss, SiDocker, SiEthereum, SiMongodb, SiGithub, SiGit, SiTrpc, SiRust, SiGo, SiKubernetes, SiThreedotjs, SiSupabase, SiPrisma } from "react-icons/si"
+import { FaNodeJs,FaAws } from "react-icons/fa6";
+import { GiArtificialIntelligence } from "react-icons/gi"
+import Solana from "../icons/Solana"
+import Python from "../icons/python"
+import Java from "../icons/Java"
 
 const techStack = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Java",
-  "Python",
-  "Solidity",
-  "Ethereum",
-  "PostgreSQL",
-  "MongoDB",
-  "AWS",
-  "GitHub Actions",
-  "Docker",
-  "Tailwind",
-  "Git",
-  "tRPC",
+    { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 bg-black" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500 bg-white" /> },
+  { name: "React", icon: <SiReact className="text-cyan-400" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" /> },
+  { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
+  { name: "Java", icon: <Java className="h-5 w-5" /> },
+  { name: "Python", icon: <Python className="h-5 w-4" /> },
+  { name: "Solidity", icon: <SiSolidity className="text-gray-600" /> },
+  { name: "Ethereum", icon: <SiEthereum className="text-gray-600" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql className="text-[#008bb9]" /> },
+  { name: "Prisma", icon: <SiPrisma className="text-[#5A67D8]" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+  { name: "AWS", icon: <FaAws className="text-white bg-black h-6 w-9" /> },
+  { name: "GitHub Actions", icon: <SiGithub className="text-gray-600" /> },
+  { name: "Docker", icon: <SiDocker className="text-blue-600" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
+  { name: "Git", icon: <SiGit className="text-orange-600" /> },
+  { name: "Supabase", icon: <SiSupabase className="text-green-500" /> },
+  { name: "tRPC", icon: <SiTrpc className="text-blue-600" /> },
 ]
 
 const learning = [
-  "Rust",
-  "Solana Dev",
-  "Golang",
-  "AI Agents",
-  "Kubernetes",
-  "Three.js",
+  { name: "Rust", icon: <SiRust className="text-amber-900" /> },
+  { name: "Solana Dev", icon: <Solana className="h-5 w-3.5" /> },
+  { name: "Golang", icon: <SiGo className="text-[#00ADD8]" /> },
+  { name: "AI Agents", icon: <GiArtificialIntelligence className="text-amber-200" /> },
+  { name: "Kubernetes", icon: <SiKubernetes className="text-blue-500" /> },
+  { name: "Three.js", icon: <SiThreedotjs className="text-white hidden dark:block" /> },
 ]
 
 const funFacts = [
@@ -136,30 +143,28 @@ export default function AboutSection() {
               dark:bg-gray-900/40 dark:border-gray-700
               rounded-2xl p-8
               shadow-lg
-              py-20
+              py-10
             "
           >
             <h3 className="flex items-center text-2xl font-semibold mb-4">
               <Rocket className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" />
               About Me
             </h3>
-            <div className="space-y-4 text-gray-700 dark:text-gray-300 text-base">
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 text-base leading-relaxed">
               <p>
-                I design and develop robust full-stack applications,
-                intuitive developer tools, and automated pipelines—
-                leveraging blockchain and AI to solve real problems.
-                From browser automations to decentralized monitors,
-                I deliver clean, performant solutions at speed.
+                I&apos;m Abhishek — a full-stack & web3 developer who thrives on shipping fast, clean, and clever solutions. 
               </p>
               <p>
-                While I excel as a solo builder, I thrive collaborating
-                with driven teams. I champion originality, thoughtful UI,
-                and maintainable code.
+                Whether it’s automating the boring stuff, deploying smart contracts, or designing snappy UIs, I like building things end-to-end — and sweating the details.
               </p>
               <p>
-                Ready to build something impactful together? Let’s connect!
+                I’ve solo-built tools, dashboards, AI-powered dev workflows, and decentralized monitors — and I’m just getting started.
+              </p>
+              <p>
+                Currently exploring Rust, Solana, and AI agents. Always up to collaborate on something that sparks curiosity.
               </p>
             </div>
+
           </article>
         </div>
 
@@ -170,18 +175,12 @@ export default function AboutSection() {
             What I Use
           </h3>
           <div className="flex flex-wrap gap-2">
-            {techStack.map((tech) => (
-              <Badge
-                key={tech}
-                className="
-                  bg-gray-100 text-gray-800 border-gray-200
-                  dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700
-                  text-sm
-                "
-              >
-                {tech}
-              </Badge>
-            ))}
+              {techStack.map(({ name, icon }) => (
+                <div key={name} className="flex items-center gap-2 p-3 bg-muted/40 dark:bg-muted/20 border border-border rounded-lg">
+                  {icon}
+                  <span className="text-sm font-medium">{name}</span>
+                </div>
+              ))}
           </div>
         </section>
 
@@ -192,18 +191,12 @@ export default function AboutSection() {
             Currently Learning
           </h3>
           <div className="flex flex-wrap gap-2">
-            {learning.map((item) => (
-              <Badge
-                key={item}
-                className="
-                  bg-blue-100 text-blue-800 border-blue-200
-                  dark:bg-blue-900/30 dark:text-blue-200 dark:border-blue-700
-                  text-sm
-                "
-              >
-                {item}
-              </Badge>
-            ))}
+            {learning.map(({ name, icon }) => (
+                <div key={name} className="flex items-center gap-2 p-3 bg-muted/40 dark:bg-muted/20 border border-border rounded-lg">
+                  {icon}
+                  <span className="text-sm font-medium">{name}</span>
+                </div>
+              ))}
           </div>
         </section>
 

@@ -4,51 +4,49 @@
 /* ✅ Universal Custom Variant */
 @custom-variant dark (&:is(.dark *));
 
-/* 🌞 Light Mode — Solarized Light */
+/* 🌞 Light Mode — Clean and Soft */
 :root {
-  --background: #f9fafb;         /* very light gray, not pure white */
-  --foreground: #1f2937;         /* near-black, strong text */
-  
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
+  --background: #f8fafc;                          /* 🆕 very soft neutral, not pure white */
+  --foreground: #0f172a;                          /* 🆕 slate-900 — strong but gentle text */
 
-  --card: #ffffff;
-  --card-foreground: #1f2937;
+  --muted: #e2e8f0;                               /* 🆕 slate-200 */
+  --muted-foreground: #475569;                    /* 🆕 slate-600 */
+
+  --card: #ffffff;                                /* neutral white */
+  --card-foreground: #0f172a;
 
   --popover: #ffffff;
-  --popover-foreground: #1f2937;
+  --popover-foreground: #0f172a;
 
-  --primary: #3b82f6;            /* blue-500 */
+  --primary: #3b82f6;                             /* blue-500 */
   --primary-foreground: #ffffff;
 
-  --secondary: #6366f1;          /* indigo-500 */
+  --secondary: #6366f1;                           /* indigo-500 */
   --secondary-foreground: #ffffff;
 
-  --accent: #101b17;             /* emerald-500 */
+  --accent: #334155;                              /* 🆕 slate-800 */
   --accent-foreground: #ffffff;
 
-  --destructive: #ef4444;        /* red-500 */
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
 
-  --border: #e5e7eb;             /* neutral-200 */
-  --input: #e5e7eb;
-  --ring: #d1d5db;               /* neutral-300 */
+  --border: #cbd5e1;                              /* 🆕 slate-300 */
+  --input: #cbd5e1;
+  --ring: #94a3b8;                                /* 🆕 slate-400 */
 
   --radius: 0.5rem;
 
-
-  /* Optional: For charts or sidebar themes */
-  --sidebar: #eee8d5;
-  --sidebar-foreground: #586e75;
-  --sidebar-primary: #268bd2;
+  --sidebar: #f1f5f9;                             /* 🆕 slate-100 */
+  --sidebar-foreground: #334155;
+  --sidebar-primary: #3b82f6;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2aa198;
+  --sidebar-accent: #6366f1;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #93a1a1;
-  --sidebar-ring: #859900;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #64748b;
 }
 
-/* 🌚 Dark Mode — Solarized Dark */
+/* 🌚 Dark Mode — Sleek Deep Navy */
 .dark {
   --background: #000319;
   --foreground: #f8fafc;
@@ -115,7 +113,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Optional: For your sidebar charts etc. */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);

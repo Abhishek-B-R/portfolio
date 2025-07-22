@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import GuestbookForm from "@/components/GuestBook/form"
 import GuestbookMessages from "@/components/GuestBook/messages"
-import { LogIn, LogOut } from "lucide-react"
+import { LogOut } from "lucide-react"
+import Google from "../icons/Google"
 
 export default function GuestbookPage() {
   const { data: session, status } = useSession()
@@ -53,8 +54,8 @@ export default function GuestbookPage() {
               <p className="text-muted-foreground mb-6">
                 Sign in with Google to share your thoughts and join the conversation!
               </p>
-              <Button onClick={() => signIn("google")} size="lg" className="gap-2">
-                <LogIn className="w-5 h-5" />
+              <Button onClick={() => signIn("google")} size="lg" className="gap-4 bg-gray-900 hover:bg-gray-700 cursor-pointer">
+                <Google className="scale-200" />
                 Sign in with Google
               </Button>
             </CardContent>

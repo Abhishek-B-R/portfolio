@@ -23,7 +23,7 @@ export default function GuestbookPage() {
         <div className="grid grid-cols-8 items-center">
           <div className={`text-center mb-12 ${session ? "col-span-6 xl:col-span-7" : "col-span-8"}`}>
             <div className="flex items-center justify-center gap-3 mb-4">
-              <h1 className="text-3xl md:text-4xl font-bold">Hi {session?.user?.name || "Anonymous"} 👋<br />Welcome to my Guestbook</h1>
+              <h1 className="text-3xl md:text-4xl font-bold">Hi {session?.user?.name || ""} 👋<br />Welcome to my Guestbook</h1>
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Leave a message, drop your thoughts, or just say hello.

@@ -5,8 +5,10 @@ import { Button } from "../ui/button"
 import { ContainerTextFlip } from "../ui/container-text-flip"
 import Social from "./socials"
 import { Spotlight } from "../ui/spotlight"
+import {useScrollDownRedirect} from "../ScrollEvents/ScrollDownTrigger"
 
 export default function Hero() {
+  useScrollDownRedirect("/about")
   const handleDownloadResume = () => {
     // Create a link element and trigger download
     const link = document.createElement("a")
@@ -132,6 +134,8 @@ export default function Hero() {
           </p>
         </div>
       </div>
+      {/* Spacer to trigger a scrollbar on the page */}
+      <div className="h-10"></div>
     </div>
   )
 }

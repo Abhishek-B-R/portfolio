@@ -5,8 +5,11 @@ import { Mail, PenTool, Github, Twitter, MapPin, Rocket, Zap, Brain, Heart } fro
 import { Button } from "@/components/ui/button"
 import { Spotlight } from "../ui/spotlight"
 import { techStack, learning, funFacts } from "./data"
+import {useScrollUpRedirect} from "../ScrollEvents/ScrollUpTrigger"
 
 export default function AboutSection() {
+  useScrollUpRedirect("/")
+  
   return (
     <div className="relative w-full overflow-hidden">
       {/* Fixed Background Spotlights - These stay in place when scrolling */}

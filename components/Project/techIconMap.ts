@@ -3,6 +3,7 @@ const techIconMap: Record<string, { icon: string; bg: string }> = {
   "React":             { icon: "react",          bg: "#ffffff" },
   "TypeScript":        { icon: "typescript",     bg: "#ffffff" },
   "JavaScript":        { icon: "javascript",     bg: "#000000" },
+  "CSS":               { icon: "css",            bg: "#000000" },
   "Tailwind CSS":      { icon: "tailwindcss",    bg: "#ffffff" },
   "Node.js":           { icon: "nodedotjs",      bg: "#ffffff" },
   "Express":           { icon: "express",        bg: "#ffffff" },

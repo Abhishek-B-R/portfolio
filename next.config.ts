@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "pub-7ddfd5cf9541446c8d9caa4c53b1cbb5.r2.dev"
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.hashnode.com"
       }
     ]
   }

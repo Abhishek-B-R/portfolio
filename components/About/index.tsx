@@ -1,11 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, PenTool, Github, Twitter, MapPin, Rocket, Zap, Brain, Heart } from "lucide-react"
+import { Mail, PenTool, MapPin, Rocket, Zap, Brain, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Spotlight } from "../ui/spotlight"
 import { techStack, learning, funFacts } from "./data"
 import {useScrollUpRedirect} from "../ScrollEvents/ScrollUpTrigger"
+import Github from "../icons/Github"
+import Twitter from "../icons/Twitter"
 
 export default function AboutSection() {
   useScrollUpRedirect("/")

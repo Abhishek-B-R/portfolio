@@ -74,7 +74,7 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
               rel="noopener noreferrer"
               className="flex h-40 relative"
             >
-              <div className="relative w-0 lg:w-64 h-full bg-muted overflow-hidden flex-shrink-0">
+              <div className="relative pl-4 w-0 lg:w-64 h-full overflow-hidden flex-shrink-0">
                 {post.coverImage?.url ? (
                   <Image
                     src={post.coverImage.url}
@@ -110,7 +110,7 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/20 group-hover:to-background/40 transition-all duration-300" />
 
                 {index === 0 && (
-                  <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs px-2 py-1 shadow-lg">
+                  <Badge className="absolute top-3 left-6 bg-primary text-primary-foreground text-xs px-2 py-1 shadow-lg">
                     Latest
                   </Badge>
                 )}

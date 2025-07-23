@@ -1,13 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { FaGithub, FaLocationArrow } from "react-icons/fa6"
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
 import { PinContainer } from "@/components/ui/3d-pin"
 import Image from "next/image"
 import techIconMap from "./techIconMap"
 import { useDarkModeWatcher } from "./darkModeWatcher"
-import SkeletonProject from "./SkeletonProject"
 
 interface Project {
   id: string
@@ -23,29 +21,10 @@ interface Project {
   duration?: string
 }
 
-export default function RecentProjects() {
-  const [projects, setProjects] = useState<Project[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+export default function RecentProjects({projects, error}: {projects: Project[], error: string | null}) {
   const isDarkMode = useDarkModeWatcher()
 
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch projects")
-          return res.json()
-      })
-      .then((data) => {
-        setProjects(data)
-        setIsLoading(false)
-      })
-      .catch((err) => {
-        console.error("Error fetching projects:", err)
-        setError(err.message)
-        setIsLoading(false)
-      })
-    }, [])
-    
+
     const getThumbnail = (url: string, isDarkMode: boolean): string => {
       if (!url.includes(".")) return url; // fallback safety
   
@@ -55,22 +34,6 @@ export default function RecentProjects() {
   
       return isDarkMode ? url : `${base}-light${ext}`;
     };
-
-  if (isLoading) {
-    return (
-      <section className="py-20 mt-20" id="projects">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Loading projects...</h2>
-        </div>
-        <div className="grid grid-cols-2 justify-center items-center gap-x-24 gap-y-14 mt-10">
-          {[...Array(4)].map((_, idx) => (
-            <SkeletonProject key={idx} />
-          ))}
-        </div>
-      </section>
-    )
-  }
-
 
   if (error) {
     return (

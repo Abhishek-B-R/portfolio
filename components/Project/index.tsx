@@ -5,9 +5,9 @@ import { FaGithub, FaLocationArrow } from "react-icons/fa6"
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
 import { PinContainer } from "@/components/ui/3d-pin"
 import Image from "next/image"
-import { Loader2 } from "lucide-react"
 import techIconMap from "./techIconMap"
 import { useDarkModeWatcher } from "./darkModeWatcher"
+import SkeletonProject from "./SkeletonProject"
 
 interface Project {
   id: string
@@ -58,23 +58,37 @@ export default function RecentProjects() {
 
   if (isLoading) {
     return (
-      <section className="py-20" id="projects">
-        <div className="flex justify-center items-center mt-16">
-          <Loader2 className="w-8 h-8 animate-spin text-purple-600" />
+      <section className="py-20 mt-20" id="projects">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl font-bold text-foreground">Loading projects...</h2>
+        </div>
+        <div className="grid grid-cols-2 justify-center items-center gap-x-24 gap-y-14 mt-10">
+          {[...Array(4)].map((_, idx) => (
+            <SkeletonProject key={idx} />
+          ))}
         </div>
       </section>
     )
   }
 
+
   if (error) {
     return (
-      <section className="py-20" id="projects">
-        <div className="text-center mt-16">
-          <p className="text-red-500">Error loading projects: {error}</p>
+      <section className="py-20 mt-60" id="projects">
+        <div className="text-center space-y-4 mt-10">
+          <h2 className="text-xl font-bold text-red-500">Failed to load projects</h2>
+          <p className="text-muted-foreground">Something went wrong: {error}</p>
+          <button
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded hover:bg-purple-700"
+            onClick={() => window.location.reload()}
+          >
+            Retry
+          </button>
         </div>
       </section>
     )
   }
+
 
   return (
     <section className="py-20" id="projects">

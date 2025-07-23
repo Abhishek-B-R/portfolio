@@ -105,7 +105,7 @@ bun install  # or bun install / yarn
 bun dev
 ```
 
-🎯 Future Roadmap
+## 🎯 Future Roadmap
 
 *  Blog search with filters (tags, category, full text)
 *  Project filter by tech stack
@@ -113,7 +113,7 @@ bun dev
 *  Newsletter integration
 *  GitHub contributions heatmap
 
-📬 Connect with Me
+## 📬 Connect with Me
 
 * 🌍 Website: abhi.wtf
 * 🐦 Twitter: @abhi__br

@@ -45,7 +45,12 @@ export default function Page() {
 
   if (isLoading) {
     return (
-      <section className="px-80 pl-[480px] mt-20" id="projects">
+      <section className="mt-20" id="projects"        
+        style={{
+          marginLeft: navbarWidth > 0 ? `${navbarWidth}px` : "0px",
+          marginRight: navbarWidth > 0 ? `${navbarWidth/2}px` : "0px",
+        }}
+      >
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-foreground">Loading projects...</h2>
         </div>

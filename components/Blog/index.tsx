@@ -1,13 +1,12 @@
 "use client"
 
-import { useBlogs } from "@/hooks/useBlogs"
 import Image from "next/image"
 import { Calendar, Clock, ExternalLink, AlertCircle, Loader2, ArrowUpRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { BlogPost } from "@/hooks/useBlogs"
 
-export default function BlogList() {
-  const { posts, loading, error } = useBlogs()
+export default function BlogList({ posts, error }: { posts: BlogPost[], error: string | null }) {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -16,33 +15,6 @@ export default function BlogList() {
       month: "short",
       day: "numeric",
     })
-  }
-
-  if (loading) {
-    return (
-      <div className="space-y-6 mt-40 ml-10" aria-busy="true" aria-live="polite">
-        {[...Array(3)].map((_, i) => (
-          <Card key={i} className="overflow-hidden animate-pulse">
-            <CardContent className="p-0">
-              <div className="flex">
-                <div className="w-64 h-40 bg-muted" />
-                <div className="flex-1 p-6 space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="h-4 w-24 bg-muted rounded" />
-                    <div className="h-4 w-20 bg-muted rounded" />
-                  </div>
-                  <div className="h-6 w-4/5 bg-muted rounded" />
-                  <div className="space-y-2">
-                    <div className="h-4 w-full bg-muted rounded" />
-                    <div className="h-4 w-3/4 bg-muted rounded" />
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    )
   }
 
   if (error) {

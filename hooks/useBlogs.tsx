@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type BlogPost = {
+export type BlogPost = {
   readTimeInMinutes: number;
   title: string;
   brief: string;

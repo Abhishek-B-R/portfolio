@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "license": "MIT",
   "dependencies": {
     "@prisma/client": "^6.12.0",
     "@radix-ui/react-dialog": "^1.1.14",

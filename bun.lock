@@ -4,6 +4,7 @@
     "": {
       "name": "portfolio-website",
       "dependencies": {
+        "@fontsource/poppins": "^5.2.6",
         "@prisma/client": "^6.12.0",
         "@radix-ui/react-dialog": "^1.1.14",
         "@radix-ui/react-hover-card": "^1.1.14",
@@ -95,6 +96,8 @@
     "@floating-ui/react-dom": ["@floating-ui/react-dom@2.1.4", "", { "dependencies": { "@floating-ui/dom": "^1.7.2" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-JbbpPhp38UmXDDAu60RJmbeme37Jbgsm7NrHGgzYYFKmblzRUh6Pa641dII6LsjwF4XlScDrde2UAzDo/b9KPw=="],
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.10", "", {}, "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="],
+
+    "@fontsource/poppins": ["@fontsource/poppins@5.2.6", "", {}, "sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ=="],
 
     "@humanfs/core": ["@humanfs/core@0.19.1", "", {}, "sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA=="],
 

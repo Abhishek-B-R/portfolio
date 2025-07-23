@@ -21,7 +21,7 @@ export function useBlogs() {
       try {
         const query = `
           query {
-            publication(host: "blogs.abhi.wtf") {
+            publication(host: "blogs.pulkitxm.com") {
               posts(first: 10) {
                 edges {
                   node {

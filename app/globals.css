@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@fontsource/poppins/latin.css";
 
 /* ✅ Universal Custom Variant */
 @custom-variant dark (&:is(.dark *));
@@ -49,7 +50,7 @@
 /* 🌚 Dark Mode — Sleek Deep Navy */
 .dark {
   --background: #000319;
-  --foreground: #f8fafc;
+  --foreground: #f8fafc;                                                                  
 
   --muted: #1e293b;
   --muted-foreground: #94a3b8;

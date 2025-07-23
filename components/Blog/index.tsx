@@ -80,7 +80,7 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
                     src={post.coverImage.url}
                     alt={post.title}
                     fill
-                    className="object-cover transition-all duration-500 group-hover:scale-110"
+                    className="object-cover transition-all duration-500 group-hover:scale-110 hidden lg:block"
                     sizes="256px"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement

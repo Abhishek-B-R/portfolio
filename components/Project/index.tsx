@@ -66,9 +66,10 @@ export default function RecentProjects({projects, error}: {projects: Project[], 
               bg: techIconMap[tech]?.bg ?? "#ffffff"
           }))
           return (
-            <div key={item.id} className="col-span-2 2xl:col-span-1 mx-10 items-center sm:w-[570px] w-[85vw]" onClick={()=> window.open(item.liveUrl ?? "#", "_blank")}>
+            <div key={item.id} className="col-span-2 2xl:col-span-1 md:mx-10 items-center sm:w-[570px] w-[85vw]">
               <PinContainer title={item.liveUrl ?? "Project Preview"} href={item.liveUrl ?? "#"}>
-                <div className="flex flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] sm:w-[30rem] 2xl:w-[34rem] h-[12rem] 2xl:h-[15rem] ">
+                <div className="flex flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] sm:w-[30rem] 2xl:w-[34rem] h-[12rem] 2xl:h-[15rem]"
+                 onClick={()=> window.open(item.liveUrl ?? "#", "_blank")}>
                   {item.thumbnail && (
                     <Image
                       src={getThumbnail(item.thumbnail, isDarkMode)}
@@ -98,7 +99,7 @@ export default function RecentProjects({projects, error}: {projects: Project[], 
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">{item.description}</p>
                 )}
 
-                <div className="mb-4 flex justify-start">
+                <div className="mb-4 flex flex-wrap justify-center md:justify-start gap-1.5 md:gap-0 max-w-[70vw] mx-auto">
                   <AnimatedTooltip items={techItems} />
                 </div>
 

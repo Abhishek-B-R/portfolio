@@ -108,23 +108,16 @@ bun dev
 🎯 Future Roadmap
 
 *  Blog search with filters (tags, category, full text)
-
 *  Project filter by tech stack
-
 *  Add RSS feed and sitemap
-
 *  Newsletter integration
-
 *  GitHub contributions heatmap
 
 📬 Connect with Me
 
 * 🌍 Website: abhi.wtf
-
 * 🐦 Twitter: @abhi__br
-
 * 💼 LinkedIn: in/abhi-br
-
 * 📧 abhishek.br.work@gmail.com
 
 
@@ -135,11 +128,8 @@ This project is licensed under the [MIT License](./LICENSE).
 🙌 Acknowledgments
 
 * UI/UX inspo from modern dev portfolios
-
 * Hashnode for blogging support
-
 * Shadcn & Tailwind community
-
 * You — for reading this ❤️
 
 ## ⭐️ Show your support

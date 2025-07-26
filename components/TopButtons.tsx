@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ThemeToggle } from "./themeToggle"
 import { Button } from "@/components/ui/button"
-import { PenTool } from "lucide-react"
+import { PenTool, Heart } from "lucide-react"
 
 export default function TopButtons() {
   return (
@@ -12,7 +12,15 @@ export default function TopButtons() {
         <ThemeToggle />
         <Link href="/guestbook">
           <Button size="sm" className="bg-blue-600 cursor-pointer hover:bg-blue-800 text-white">
-            <PenTool /> Sign my Guestbook
+            <PenTool className="mr-1 w-4 h-4" /> Sign my Guestbook
+          </Button>
+        </Link>
+        <Link href="https://github.com/sponsors/Abhishek-B-R" target="_blank">
+          <Button
+            size="sm"
+            className="bg-pink-600 hover:bg-pink-700 text-white"
+          >
+            <Heart className="mr-1 w-4 h-4" /> Sponsor Me 💖
           </Button>
         </Link>
       </div>

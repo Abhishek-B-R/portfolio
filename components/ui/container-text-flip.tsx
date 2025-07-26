@@ -23,7 +23,7 @@ export function ContainerTextFlip({
   interval = 2000,
   className,
   textClassName,
-  animationDuration = 500,
+  animationDuration = 750,
 }: ContainerTextFlipProps) {
   const id = useId();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);

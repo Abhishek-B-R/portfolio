@@ -26,12 +26,12 @@ The site is fast, functional, and developer-friendly — combining aesthetics wi
 | Layer       | Technology                                                                 |
 |-------------|-----------------------------------------------------------------------------|
 | **Frontend**| [Next.js 15](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/) |
-| **UI / UX** | [shadcn/ui](https://ui.shadcn.com/), [lucide-react](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/) |
+| **UI / UX** | [shadcn/ui](https://ui.shadcn.com/),[aceternity ui](https://ui.aceternity.com/), [lucide-react](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/) |
 | **Backend** | Custom Next.js API routes for emailing, meeting booking                    |
 | **Emailing**| [Nodemailer](https://nodemailer.com/)                                      |
 | **Blog**    | [Hashnode GraphQL API](https://hashnode.com)                              |
-| **Auth**    | [Clerk.dev](https://clerk.dev) (used in Guestbook)                         |
-| **Storage** | [Supabase](https://supabase.com) (for guestbook entries)                   |
+| **Auth**    | [nextauth.dev](https://next-auth.js.org) (used in Guestbook)                         |
+| **Storage** | [PostgreSQL DB](https://neon.tech) (for guestbook entries)                   |
 | **Deployment** | [Vercel](https://vercel.com)                                            |
 
 ---
@@ -41,9 +41,9 @@ The site is fast, functional, and developer-friendly — combining aesthetics wi
 
 ```
 ├── app/ # Route handlers for Next.js 14 app router
-│ ├── blog/ # Blog listing page
+│ ├── blogs/ # Blog listing page
 │ ├── contact/ # Contact page with form
-│ ├── guestbook/ # Guestbook page (with Clerk + Supabase)
+│ ├── guestbook/ # Guestbook page (with Nextauth + PostgreSQL DB)
 │ ├── meeting/ # Booking system UI
 │ └── api/ # Custom backend endpoints (email, guestbook etc.)
 ├── components/ # All UI components (landing, project card, blog etc.)
@@ -129,7 +129,7 @@ This project is licensed under the [MIT License](./LICENSE).
 
 * UI/UX inspo from modern dev portfolios
 * Hashnode for blogging support
-* Shadcn & Tailwind community
+* Shadcn, Aceternity & Tailwind community
 * You — for reading this ❤️
 
 ## ⭐️ Show your support

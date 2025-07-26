@@ -8,7 +8,7 @@ const icons = [
   { url: "/", icon: <HomeIcon /> },
   { url: "/about", icon: <User2Icon /> },
   { url: "/projects", icon: <Code2Icon /> },
-  { url: "/blog", icon: <BookOpenText /> },
+  { url: "/blogs", icon: <BookOpenText /> },
   { url: "/contact", icon: <Mail /> },
   { url: "/guestbook", icon: <PenTool /> },
 ]

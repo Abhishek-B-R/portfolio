@@ -22,6 +22,7 @@ export function useBlogs() {
         const query = `
           query {
             publication(host: "blogs.abhi.wtf") {
+            title
               posts(first: 10) {
                 edges {
                   node {
@@ -43,7 +44,11 @@ export function useBlogs() {
         const res = await fetch("https://gql.hashnode.com", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ query }),
+          body: JSON.stringify({ 
+            query,
+            variables: { _bust: Date.now() }
+          }),
+          cache: "no-store", 
         });
 
         const json = await res.json();

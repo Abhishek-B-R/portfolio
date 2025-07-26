@@ -1,28 +1,31 @@
 (async ()=>{
-    const query = `
-  query {
-    publication(host: "blogs.abhi.wtf") {
-      posts(first: 10) {
-        edges {
-          node {
-            title
-            brief
-            slug
-            coverImage {
+  const query = `
+    query {
+      publication(host: "blogs.abhi.wtf") {
+        title
+        posts(first: 10) {
+          edges {
+            node {
+              title
+              slug
+              brief
+              publishedAt
+              readTimeInMinutes
+              coverImage {
                 url
+              }
             }
-            publishedAt
-            readTimeInMinutes
           }
         }
       }
     }
-  }
-`;
+  `;
 
 const response = await fetch("https://gql.hashnode.com", {
   method: "POST",
-  headers: { "Content-Type": "application/json" },
+  headers: {
+    "Content-Type": "application/json"
+  },
   body: JSON.stringify({ query }),
 });
 

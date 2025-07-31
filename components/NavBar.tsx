@@ -12,7 +12,7 @@ const icons = [
   { url: "/contact", icon: <Mail /> },
   { url: "/guestbook", icon: <PenTool /> },
 ]
-
+// add on hover text rendering
 export default function NavBar() {
   const [windowWidth, setWindowWidth] = useState<number>(0)
   const [navbarWidth, setNavbarWidth] = useState<number>(0)

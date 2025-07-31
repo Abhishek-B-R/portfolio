@@ -15,10 +15,10 @@ export default function TopButtons() {
             <PenTool className="w-4 h-4" /> Sign my Guestbook
           </Button>
         </Link>
-        <Link href="https://github.com/sponsors/Abhishek-B-R" target="_blank" className="cursor-pointer">
+        <Link href="https://github.com/sponsors/Abhishek-B-R" target="_blank">
           <Button
             size="sm"
-            className="bg-pink-600 hover:bg-pink-700 text-white"
+            className="bg-pink-600 hover:bg-pink-700 text-white cursor-pointer"
           >
             <Heart className="w-4 h-4" /> Sponsor Me 💖
           </Button>

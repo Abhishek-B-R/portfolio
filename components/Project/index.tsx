@@ -77,7 +77,6 @@ export default function RecentProjects({projects, error}: {projects: Project[], 
                       fill
                       className="object-cover"
                       onError={(e) => {
-                        // Hide broken image and show fallback
                         const target = e.target as HTMLImageElement
                         target.style.display = "none"
                       }}
@@ -86,7 +85,7 @@ export default function RecentProjects({projects, error}: {projects: Project[], 
 
                   {/* Live badge */}
                   {item.liveUrl && (
-                    <div className="absolute bottom-3 right-3 flex items-center text-sm text-purple-400 font-medium bg-black/60 px-3 py-1 rounded-full pointer-events-none">
+                    <div className="absolute bottom-3 right-3 flex items-center text-sm text-teal-300 font-medium bg-black/60 px-3 py-1 rounded-full pointer-events-none">
                       Live Website <FaLocationArrow className="ml-2" />
                     </div>
                   )}

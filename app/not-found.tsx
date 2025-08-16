@@ -22,7 +22,7 @@ export default function NotFound() {
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6 py-12">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           <div className="relative">
-            <h1 className="text-8xl md:text-9xl font-bold bg-gradient-to-r from-primary via-green-300 to-blue-600 bg-clip-text text-transparent select-none">
+            <h1 className="text-8xl md:text-9xl font-bold bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent select-none">
               404
             </h1>
             <div className="absolute inset-0 text-8xl md:text-9xl font-bold text-primary/10 blur-sm select-none">

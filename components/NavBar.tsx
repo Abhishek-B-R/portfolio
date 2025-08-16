@@ -3,6 +3,8 @@
 import { BookOpenText, Code2Icon, HomeIcon, Mail, PenTool, User2Icon } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import labels from "./labels"
+import { usePathname } from "next/navigation"
 
 const icons = [
   { url: "/", icon: <HomeIcon /> },
@@ -16,6 +18,8 @@ const icons = [
 export default function NavBar() {
   const [windowWidth, setWindowWidth] = useState<number>(0)
   const [navbarWidth, setNavbarWidth] = useState<number>(0)
+  const pathname = usePathname()
+  const [activeTab, setActiveTab] = useState(pathname)
 
   useEffect(() => {
     const calculateNavbarWidth = () => {
@@ -58,6 +62,10 @@ export default function NavBar() {
             <li key={index}>
               <Link
                 href={url}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab(url);
+                }}
                 className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 {icon}
@@ -78,12 +86,27 @@ export default function NavBar() {
       <ul className="flex flex-col space-y-6">
         {icons.map(({ url, icon }, index) => (
           <li key={index}>
-            <Link
-              href={url}
-              className="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors md:mr-5 lg:mr-10"
-            >
-              {icon}
-            </Link>
+            {(() => {
+              return (
+                <Link
+                  href={url}
+                  aria-label={labels[url]}
+                  onClick={(e) => {
+                    setActiveTab(url);
+                  }}
+                  className="group flex items-center justify-start rounded-lg px-2 py-1 overflow-hidden"
+                >
+                  <span className={`flex items-center justify-center w-12 h-12 rounded-lg group-hover:bg-accent group-hover:text-accent-foreground transition-colors ${activeTab === url ? "bg-accent text-accent-foreground" : "text-muted-foreground"}`}>
+                    {icon}
+                  </span>
+                  <span
+                    className="ml-3 text-sm font-medium opacity-0 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 whitespace-nowrap"
+                  >
+                    {labels[url]}
+                  </span>
+                </Link>
+              )
+            })()}
           </li>
         ))}
       </ul>

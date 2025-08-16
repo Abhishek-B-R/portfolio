@@ -86,6 +86,7 @@ export const AnimatedTooltip = ({
             width={100}
             src={item.image==="nextauth" ? `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSELdwWENA-BYjfZOjYTVKctLbv6l8MGBE30zdb7PELkhfIxETnoF_aAP5Wf-5xq6btsds&usqp=CAU`
               : item.name==="PokeAPI" ? `https://cdn.pixabay.com/photo/2016/08/15/00/50/pokeball-1594373_640.png`
+              : item.name === "Tesseract.js" ? `https://pub-7ddfd5cf9541446c8d9caa4c53b1cbb5.r2.dev/extra-logos/tesseract.png`
               : `https://cdn.simpleicons.org/${item.image}?color=ffffff`
             }
             alt={item.name}

@@ -25,6 +25,10 @@ const techIconMap: Record<string, { icon: string; bg: string }> = {
   "Clerk":             { icon: "clerk",          bg: "#ffffff" },
   "Threejs":           { icon: "three.js",       bg: "#ffffff" },
   "Gemini API":        { icon: "googlegemini",   bg: "#ffffff" },
+  "OpenAI API":        { icon: "openai",         bg: "#ffffff" },
+  "Canvas":            { icon: "canvas",         bg: "#ffffff" },
+  "FastAPI":           { icon: "fastapi",         bg: "#ffffff" },
+  "Python":            { icon: "python",         bg: "#ffffff" },
 };
 
 export default techIconMap

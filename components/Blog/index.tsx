@@ -1,21 +1,33 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Calendar, Clock, ExternalLink, AlertCircle, Loader2, ArrowUpRight } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { BlogPost } from "@/hooks/useBlogs"
+import Image from "next/image";
+import {
+  Calendar,
+  Clock,
+  ExternalLink,
+  AlertCircle,
+  Loader2,
+  ArrowUpRight,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { BlogPost } from "@/hooks/useBlogs";
 
-export default function BlogList({ posts, error }: { posts: BlogPost[], error: string | null }) {
-
+export default function BlogList({
+  posts,
+  error,
+}: {
+  posts: BlogPost[];
+  error: string | null;
+}) {
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
+    const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
       day: "numeric",
-    })
-  }
+    });
+  };
 
   if (error) {
     return (
@@ -23,9 +35,12 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
         <CardContent className="flex items-center justify-center py-12">
           <div className="text-center space-y-4">
             <AlertCircle className="w-10 h-10 text-destructive mx-auto" />
-            <h3 className="text-lg font-semibold text-destructive">Failed to load blog posts</h3>
+            <h3 className="text-lg font-semibold text-destructive">
+              Failed to load blog posts
+            </h3>
             <p className="text-muted-foreground text-sm max-w-md mx-auto">
-              Something went wrong while fetching blog content. Please try again in a moment.
+              Something went wrong while fetching blog content. Please try again
+              in a moment.
             </p>
             <button
               onClick={() => window.location.reload()}
@@ -37,7 +52,7 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   if (!posts || posts.length === 0) {
@@ -49,18 +64,20 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
               <ExternalLink className="w-8 h-8 text-muted-foreground" />
             </div>
             <h3 className="text-lg font-semibold">No blog posts yet</h3>
-            <p className="text-muted-foreground">When I publish something new, you’ll see it here!</p>
+            <p className="text-muted-foreground">
+              When I publish something new, you’ll see it here!
+            </p>
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
     <div className="space-y-6 px-2 md:px-10 mt-40">
-        <span className="text-xl md:text-2xl font-medium mb-10 block text-center">
-            🚧 Work logs, brain dumps, and occasional genius. Welcome aboard.
-        </span>
+      <span className="text-xl md:text-2xl font-medium mb-10 block text-center">
+        🚧 Work logs, brain dumps, and occasional genius. Welcome aboard.
+      </span>
 
       {posts.map((post, index) => (
         <Card
@@ -69,7 +86,7 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
         >
           <CardContent className="p-0">
             <a
-              href={`https://blogs.abhi.wtf/${post.slug}`}
+              href={`https://blogs.abhishekbr.dev/${post.slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-40 relative"
@@ -83,9 +100,9 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
                     className="object-cover transition-all duration-500 group-hover:scale-110 hidden lg:block"
                     sizes="256px"
                     onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.style.display = "none"
-                      const parent = target.parentElement
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = "none";
+                      const parent = target.parentElement;
                       if (parent) {
                         parent.innerHTML = `
                           <div class="w-full h-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 flex items-center justify-center">
@@ -94,7 +111,7 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
                               <div class="text-sm text-muted-foreground font-medium">Blog Post</div>
                             </div>
                           </div>
-                        `
+                        `;
                       }
                     }}
                   />
@@ -102,7 +119,9 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
                   <div className="w-full h-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-3xl mb-2">📝</div>
-                      <div className="text-sm text-muted-foreground font-medium">Blog Post</div>
+                      <div className="text-sm text-muted-foreground font-medium">
+                        Blog Post
+                      </div>
                     </div>
                   </div>
                 )}
@@ -152,5 +171,5 @@ export default function BlogList({ posts, error }: { posts: BlogPost[], error: s
         </Card>
       ))}
     </div>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-(async ()=>{
+(async () => {
   const query = `
     query {
-      publication(host: "blogs.abhi.wtf") {
+      publication(host: "blogs.abhishekbr.dev") {
         title
         posts(first: 10) {
           edges {
@@ -21,15 +21,14 @@
     }
   `;
 
-const response = await fetch("https://gql.hashnode.com", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ query }),
-});
+  const response = await fetch("https://gql.hashnode.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ query }),
+  });
 
-const result = await response.json();
-console.log(JSON.stringify(result, null, 2));
-
-})()
+  const result = await response.json();
+  console.log(JSON.stringify(result, null, 2));
+})();

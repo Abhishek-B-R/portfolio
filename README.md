@@ -1,6 +1,6 @@
-# 🌐 abhi.wtf — Personal Portfolio
+# 🌐 abhishekbr.dev — Personal Portfolio
 
-This is the source code for my personal portfolio website [**abhi.wtf**](https://abhi.wtf), built to showcase my projects, write technical blogs, and connect with potential collaborators, companies, and communities.
+This is the source code for my personal portfolio website [**abhishekbr.dev**](https://abhishekbr.dev), built to showcase my projects, write technical blogs, and connect with potential collaborators, companies, and communities.
 
 The site is fast, functional, and developer-friendly — combining aesthetics with utility.
 
@@ -23,21 +23,20 @@ The site is fast, functional, and developer-friendly — combining aesthetics wi
 
 ## 🧰 Tech Stack
 
-| Layer       | Technology                                                                 |
-|-------------|-----------------------------------------------------------------------------|
-| **Frontend**| [Next.js 15](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/) |
-| **UI / UX** | [shadcn/ui](https://ui.shadcn.com/),[aceternity ui](https://ui.aceternity.com/), [lucide-react](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/) |
-| **Backend** | Custom Next.js API routes for emailing, meeting booking                    |
-| **Emailing**| [Nodemailer](https://nodemailer.com/)                                      |
-| **Blog**    | [Hashnode GraphQL API](https://hashnode.com)                              |
-| **Auth**    | [nextauth.dev](https://next-auth.js.org) (used in Guestbook)                         |
-| **Storage** | [PostgreSQL DB](https://neon.tech) (for guestbook entries)                   |
-| **Deployment** | [Vercel](https://vercel.com)                                            |
+| Layer          | Technology                                                                                                                                                            |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Frontend**   | [Next.js 15](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/)                                            |
+| **UI / UX**    | [shadcn/ui](https://ui.shadcn.com/),[aceternity ui](https://ui.aceternity.com/), [lucide-react](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/) |
+| **Backend**    | Custom Next.js API routes for emailing, meeting booking                                                                                                               |
+| **Emailing**   | [Nodemailer](https://nodemailer.com/)                                                                                                                                 |
+| **Blog**       | [Hashnode GraphQL API](https://hashnode.com)                                                                                                                          |
+| **Auth**       | [nextauth.dev](https://next-auth.js.org) (used in Guestbook)                                                                                                          |
+| **Storage**    | [PostgreSQL DB](https://neon.tech) (for guestbook entries)                                                                                                            |
+| **Deployment** | [Vercel](https://vercel.com)                                                                                                                                          |
 
 ---
 
 ## 📁 Folder Structure
-
 
 ```
 ├── app/ # Route handlers for Next.js 14 app router
@@ -58,7 +57,6 @@ The site is fast, functional, and developer-friendly — combining aesthetics wi
 └── README.md
 ```
 
-
 ---
 
 ## 🔌 Integrations & API Details
@@ -66,7 +64,7 @@ The site is fast, functional, and developer-friendly — combining aesthetics wi
 ### 🔗 Blog (Hashnode)
 
 - Integrated via GraphQL query to `https://gql.hashnode.com`
-- Queries blog posts from `blogs.abhi.wtf` and fetches:
+- Queries blog posts from `blogs.abhishekbr.dev` and fetches:
   - Title, slug, cover image, brief, published date, read time
 
 ### 📬 Contact Form
@@ -107,19 +105,18 @@ bun dev
 
 ## 🎯 Future Roadmap
 
-*  Blog search with filters (tags, category, full text)
-*  Project filter by tech stack
-*  Add RSS feed and sitemap
-*  Newsletter integration
-*  GitHub contributions heatmap
+- Blog search with filters (tags, category, full text)
+- Project filter by tech stack
+- Add RSS feed and sitemap
+- Newsletter integration
+- GitHub contributions heatmap
 
 ## 📬 Connect with Me
 
-* 🌍 Website: abhi.wtf
-* 🐦 Twitter: @abhi__br
-* 💼 LinkedIn: in/abhi-br
-* 📧 abhishek.br.work@gmail.com
-
+- 🌍 Website: abhishekbr.dev
+- 🐦 Twitter: @abhi\_\_br
+- 💼 LinkedIn: in/abhi-br
+- 📧 abhishek.br.work@gmail.com
 
 ## 📝 License
 
@@ -127,12 +124,13 @@ This project is licensed under the [MIT License](./LICENSE).
 
 🙌 Acknowledgments
 
-* UI/UX inspo from modern dev portfolios
-* Hashnode for blogging support
-* Shadcn, Aceternity & Tailwind community
-* You — for reading this ❤️
+- UI/UX inspo from modern dev portfolios
+- Hashnode for blogging support
+- Shadcn, Aceternity & Tailwind community
+- You — for reading this ❤️
 
 ## ⭐️ Show your support
+
 ### If you liked this portfolio or learned something from it, give it a star — it helps me a lot!
 
 ## 🌟 Star this repo

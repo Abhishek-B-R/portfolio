@@ -27,6 +27,7 @@ model Projects {
   updatedAt    DateTime @updatedAt
   order        Int?             // For custom sorting
   duration     String?          // How long you worked on it
+  videoUrl     String?
 }
 
 model GuestBook {
